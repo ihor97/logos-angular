@@ -1,0 +1,13 @@
+<h1 class="text-center">Акції</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="card col-4" *ngFor="let d of userDiscounts">
+      <img class="card-img-top" [src]="d.image" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{ d.title }}</h5>
+        <p class="card-text">{{ d.text }}.</p>
+        <a class="btn btn-primary" [routerLink]="['/discounts',d.id]">more details</a>
+      </div>
+    </div>
+  </div>
+</div>

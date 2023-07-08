@@ -1,0 +1,36 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">La-piec</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" (click)="toggle()"></span>
+      </button>
+    <div class=" navbar-collapse" [ngClass]="{collapse:isCollapsed}">
+      <ul class="navbar-nav mr-auto" (click)="toggle()">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="home">Головна</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="discounts" routerLinkActive="active">Акції</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="pizza" routerLinkActive="active">Піца</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="salad" routerLinkActive="active">Салат</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="drinks" routerLinkActive="active">Напої</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="payment" routerLinkActive="active">Оплата</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="basket" routerLinkActive="active">Кошик</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="admin" routerLinkActive="active">Admin</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

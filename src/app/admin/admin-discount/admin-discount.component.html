@@ -1,0 +1,63 @@
+<h2>admin-discount works!</h2>
+<hr>
+<form  class="form-inline">
+  <div class="form-group col-11">
+    <input type="search" class="form-control w-100" id="searchDiscount" placeholder="search here..">
+  </div>
+  <button type="button" class="btn btn-success" (click)="openModal(template)">Add Discount</button>
+</form>
+<hr>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Text</th>
+      <th scope="col">Image</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of adminDiscount; let i=index">
+      <td>{{ i+1 }}</td>
+      <td>{{ d.title }}</td>
+      <td>{{ d.text }}</td>
+      <td><img [src]="d.image" alt="" width="50px" height="50px"></td>
+      <td>
+        <input type="button" value="edit" class="btn btn-warning" (click)="editDiscount(template, d)">
+      </td>
+      <td>
+        <input type="button" value="delete" class="btn btn-danger" (click)="deleteDiscount(d)">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="dTitle">Title</label>
+        <input [(ngModel)]="dTitle" name="dTitle" type="text" class="form-control" id="dTitle"
+          placeholder="title here..">
+      </div>
+      <div class="form-group">
+        <label for="dText">Text</label>
+        <textarea [(ngModel)]="dText" name="dText" id="dText" class="form-control"
+          style="width: 100%; min-height: 200px;" placeholder="text here..."></textarea>
+      </div>
+      <div class="custom-file" *ngIf="!changeImage">
+        <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+      </div>
+      <button type="button" class="btn btn-primary mt-2" (click)="addDiscount(template)" [textContent]="!editStatus ? 'Добавити' : 'Зберегти'"></button>
+    </form>
+  </div>
+</ng-template>

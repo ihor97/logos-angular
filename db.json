@@ -1,0 +1,10 @@
+{
+  "discounts": [
+    {
+      "id": 1,
+      "title": "Наша фірмова акція 2 + 1",
+      "text": "Акція «2+1» діє в понеділок, вівторок, середу та четвер. Замовляйте дві піци та отримуйте ще одну безкоштовно!",
+      "image": "https://www.lapiec-pizza.com.ua/wp-content/uploads/2020/05/aktsiya-dlya-sajta-21.jpg"
+    }
+  ]
+}
